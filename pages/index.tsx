@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Flex, Grid, Heading, Link, Text, useToast, InputGroup, InputRightElement, Icon } from '@chakra-ui/core'
 import Divider from '../components/Divider'
 import Input from '../components/Input'
-import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 export default function Home() {
   const toast = useToast();
@@ -25,7 +24,7 @@ export default function Home() {
       alignItems="center"
     >
       <Flex gridArea="logo" flexDir="column" alignItems="center">
-        <img src="/salesforce.svg" width="150px" alt="Logo" />
+        <img src="/logo.png" width="150px" alt="Logo" />
         <Heading
           size="2xl"
           lineHeight="shorter"
@@ -47,7 +46,6 @@ export default function Home() {
         <Input
           placeholder="Email"
           autoComplete="off"
-          defaultValue=""
         />
         <InputGroup>
           <Input
@@ -55,11 +53,10 @@ export default function Home() {
             placeholder="Senha"
             marginTop={2}
             autoComplete="off"
-            defaultValue=""
           />
           <InputRightElement width="3.5rem">
             <Button h="1.75rem" size="sm" top={3} onClick={handleClickShowPassword} backgroundColor="gray.800">
-              {show ? <Icon name="view-off" /> :  <Icon name="view" />}
+              {show ? <Icon name="view-off" /> : <Icon name="view" />}
             </Button>
           </InputRightElement>
         </InputGroup>
