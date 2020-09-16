@@ -7,7 +7,7 @@ export default function Home() {
     <Grid
       as="main"
       height="100vh"
-      templateColumns="1fr 480px 480px 1fr"
+      templateColumns="1fr 400px 400px 1fr"
       templateRows="1fr 480px 1fr"
       templateAreas="
     '. . . .'
