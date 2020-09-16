@@ -1,8 +1,15 @@
-import { Button, Flex, Grid, Heading, Link, Text } from '@chakra-ui/core'
+import React from 'react';
+import { Button, Flex, Grid, Heading, Link, Text, useToast, InputGroup, InputRightElement, Icon } from '@chakra-ui/core'
 import Divider from '../components/Divider'
 import Input from '../components/Input'
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 export default function Home() {
+  const toast = useToast();
+
+  const [show, setShow] = React.useState(false);
+  const handleClickShowPassword = () => setShow(!show);
+
   return (
     <Grid
       as="main"
@@ -42,14 +49,20 @@ export default function Home() {
           autoComplete="off"
           defaultValue=""
         />
-
-        <Input
-          type="password"
-          placeholder="Senha"
-          marginTop={2}
-          autoComplete="off"
-          defaultValue=""
-        />
+        <InputGroup>
+          <Input
+            type={show ? "text" : "password"}
+            placeholder="Senha"
+            marginTop={2}
+            autoComplete="off"
+            defaultValue=""
+          />
+          <InputRightElement width="3.5rem">
+            <Button h="1.75rem" size="sm" top={3} onClick={handleClickShowPassword} backgroundColor="gray.800">
+              {show ? <Icon name="view-off" /> :  <Icon name="view" />}
+            </Button>
+          </InputRightElement>
+        </InputGroup>
 
         <Link
           alignSelf="flex-start"
@@ -68,6 +81,15 @@ export default function Home() {
           _hover={{ backgroundColor: 'blue.300' }}
           borderRadius="sm"
           height="50px"
+          onClick={() =>
+            toast({
+              title: "Feito!",
+              description: "Login realizado com sucesso!",
+              status: "success",
+              position: "top",
+              duration: 1500,
+              isClosable: true,
+            })}
         >
           Entrar
           </Button>
