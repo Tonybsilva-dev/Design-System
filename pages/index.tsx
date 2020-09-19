@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Flex, Grid, Heading, Link, Text, useToast, InputGroup, InputRightElement, Icon } from '@chakra-ui/core'
 import Divider from '../components/Divider'
 import Input from '../components/Input'
+import Nav from '../components/Nav'
 
 export default function Home() {
   const toast = useToast();
@@ -11,37 +12,35 @@ export default function Home() {
 
   return (
     <Grid
+    backgroundColor="#0054f3"
       as="main"
       height="100vh"
-      templateColumns="1fr 400px 400px 1fr"
-      templateRows="1fr 480px 1fr"
+      templateColumns=" 1fr 400px"
+      templateRows="1fr"
       templateAreas="
-    '. . . .'
-    '. logo form .'
-    '. . . .'
+    'logo form'
+    'logo form'
+    'logo form'
     "
       justifyContent="center"
       alignItems="center"
     >
-      <Flex gridArea="logo" flexDir="column" alignItems="center">
-        <img src="/logo.png" width="150px" alt="Logo" />
-        <Heading
-          size="2xl"
-          lineHeight="shorter"
-          marginTop={16}
-        >
-          Your text here!
-        </Heading>
+      <Flex gridArea="logo" flexDir="column" alignItems="center" >
+        {/* <img src="./METABLUE.gif" width="500px" alt="Logo-image" /> */}
+        <video id="videoBG" autoPlay muted loop>
+          <source src="./BLU.mp4" type="video/mp4" />
+        </video>
       </Flex>
-
       <Flex
         gridArea="form"
         height="100%"
         flexDir="column"
         alignItems="stretch"
         backgroundColor="gray.700"
-        borderRadius="sm"
         padding={16}
+        // style={{
+        //   background: "linear-gradient(180deg, #f7efd2 0%, #0054f3 100%)"
+        // }}
       >
         <Input
           placeholder="Email"
@@ -55,7 +54,12 @@ export default function Home() {
             autoComplete="off"
           />
           <InputRightElement width="3.5rem">
-            <Button h="1.75rem" size="sm" top={3} onClick={handleClickShowPassword} backgroundColor="gray.800">
+            <Button 
+            h="1.75rem" 
+            size="sm" 
+            top={3} 
+            onClick={handleClickShowPassword} 
+            backgroundColor="gray.800">
               {show ? <Icon name="view-off" /> : <Icon name="view" />}
             </Button>
           </InputRightElement>
@@ -116,8 +120,8 @@ export default function Home() {
           <Button
             height="50px"
             flex="1"
-            background="gray.600"
-            _hover={{ backgroundColor: 'blue.500' }}
+            backgroundColor="gray.800"
+            _hover={{ backgroundColor: 'gray.600' }}
             marginLeft={6}
             borderRadius="sm"
           >
@@ -125,6 +129,9 @@ export default function Home() {
           </Button>
         </Flex>
       </Flex>
+
     </Grid>
+
+
   )
 }
