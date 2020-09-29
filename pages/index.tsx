@@ -1,8 +1,20 @@
-import React from 'react';
-import { Button, Flex, Grid, Heading, Link, Text, useToast, InputGroup, InputRightElement, Icon } from '@chakra-ui/core'
-import Divider from '../components/Divider'
-import Input from '../components/Input'
-import Nav from '../components/Nav'
+import React from "react";
+import {
+  Button,
+  Flex,
+  Grid,
+  Heading,
+  Link,
+  Text,
+  useToast,
+  InputGroup,
+  InputRightElement,
+  Icon,
+} from "@chakra-ui/core";
+import Divider from "../components/Divider";
+import Input from "../components/Input";
+import { SiGithub } from "react-icons/si";
+import { FaArrowRight } from 'react-icons/fa'
 
 export default function Home() {
   const toast = useToast();
@@ -12,7 +24,7 @@ export default function Home() {
 
   return (
     <Grid
-    backgroundColor="#133B5C"
+      backgroundColor="#133B5C"
       as="main"
       height="100vh"
       templateColumns=" 1fr 400px"
@@ -25,8 +37,13 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
     >
-      <Flex gridArea="logo" flexDir="column" alignItems="center" >
-        <img src="./TonySilva.png" width="100%" height="100%" alt="Logo-image" />
+      <Flex gridArea="logo" flexDir="column" alignItems="center">
+        <img
+          src="./TonySilva.png"
+          width="100%"
+          height="100%"
+          alt="Logo-image"
+        />
         {/* <video id="videoBG" autoPlay muted loop>
           <source src="./BLU.mp4" type="video/mp4" />
         </video> */}
@@ -43,10 +60,7 @@ export default function Home() {
         //   background: "linear-gradient(180deg, #f7efd2 0%, #0054f3 100%)"
         // }}
       >
-        <Input
-          placeholder="Email"
-          autoComplete="off"
-        />
+        <Input placeholder="Email" autoComplete="off" />
         <InputGroup>
           <Input
             type={show ? "text" : "password"}
@@ -55,12 +69,13 @@ export default function Home() {
             autoComplete="off"
           />
           <InputRightElement width="3.5rem">
-            <Button 
-            h="1.75rem" 
-            size="sm" 
-            top={3} 
-            onClick={handleClickShowPassword} 
-            backgroundColor="2D4059">
+            <Button
+              h="1.75rem"
+              size="sm"
+              top={3}
+              onClick={handleClickShowPassword}
+              backgroundColor="2D4059"
+            >
               {show ? <Icon name="view-off" /> : <Icon name="view" />}
             </Button>
           </InputRightElement>
@@ -72,15 +87,16 @@ export default function Home() {
           fontSize="sm"
           color="#2D4059"
           fontWeight="bold"
-          _hover={{ color: '#DECDC3' }}
+          _hover={{ color: "#DECDC3" }}
         >
           Esqueceu sua senha?
-          </Link>
+        </Link>
 
         <Button
+          rightIcon={FaArrowRight}
           marginTop={6}
           backgroundColor="#133B5C"
-          _hover={{ backgroundColor: '#b0978f' }}
+          _hover={{ backgroundColor: "#b0978f" }}
           borderRadius="sm"
           height="50px"
           onClick={() =>
@@ -88,28 +104,20 @@ export default function Home() {
               title: "Feito!",
               description: "Login realizado com sucesso!",
               status: "success",
-              position: "top",
+              position: "top-right",
               duration: 1500,
               isClosable: true,
-            })}
+            })
+          }
         >
           Entrar
-          </Button>
+        </Button>
 
-        <Text
-          textAlign="center"
-          fontSize="sm"
-          color="gray.300"
-          marginTop={6}
-        >
-          Não tem uma conta? {" "}
-          <Link
-            color="#2D4059"
-            fontWeight="bold"
-            _hover={{ color: '#DECDC3' }}
-          >
+        <Text textAlign="center" fontSize="sm" color="gray.300" marginTop={6}>
+          Não tem uma conta?{"    "}
+          <Link color="#2D4059" fontWeight="bold" _hover={{ color: "#DECDC3" }}>
             Registre-se
- </Link>
+          </Link>
         </Text>
         <Divider />
 
@@ -122,17 +130,15 @@ export default function Home() {
             height="50px"
             flex="1"
             backgroundColor="#2D4059"
-            _hover={{ backgroundColor: '#b0978f' }}
+            _hover={{ backgroundColor: "#b0978f" }}
             marginLeft={6}
             borderRadius="sm"
+            rightIcon={SiGithub}
           >
             Github
           </Button>
         </Flex>
       </Flex>
-
     </Grid>
-
-
-  )
+  );
 }
