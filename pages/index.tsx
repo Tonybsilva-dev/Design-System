@@ -57,7 +57,7 @@ export default function Home() {
         backgroundColor="gray.700"
         padding={16}
         // style={{
-        //   background: "linear-gradient(180deg, #f7efd2 0%, #0054f3 100%)"
+        //   background: "linear-gradient(180deg, #2D4059 0%, #DECDC3 100%)"
         // }}
       >
         <Input placeholder="Email" autoComplete="off" />
