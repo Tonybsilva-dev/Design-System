@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <Grid
-    backgroundColor="#0054f3"
+    backgroundColor="#133B5C"
       as="main"
       height="100vh"
       templateColumns=" 1fr 400px"
@@ -26,12 +26,13 @@ export default function Home() {
       alignItems="center"
     >
       <Flex gridArea="logo" flexDir="column" alignItems="center" >
-        {/* <img src="./METABLUE.gif" width="500px" alt="Logo-image" /> */}
-        <video id="videoBG" autoPlay muted loop>
+        <img src="./TonySilva.png" width="100%" height="100%" alt="Logo-image" />
+        {/* <video id="videoBG" autoPlay muted loop>
           <source src="./BLU.mp4" type="video/mp4" />
-        </video>
+        </video> */}
       </Flex>
       <Flex
+        justifyContent="center"
         gridArea="form"
         height="100%"
         flexDir="column"
@@ -59,7 +60,7 @@ export default function Home() {
             size="sm" 
             top={3} 
             onClick={handleClickShowPassword} 
-            backgroundColor="gray.800">
+            backgroundColor="2D4059">
               {show ? <Icon name="view-off" /> : <Icon name="view" />}
             </Button>
           </InputRightElement>
@@ -69,17 +70,17 @@ export default function Home() {
           alignSelf="flex-start"
           marginTop={2}
           fontSize="sm"
-          color="blue.400"
+          color="#2D4059"
           fontWeight="bold"
-          _hover={{ color: 'blue.300' }}
+          _hover={{ color: '#DECDC3' }}
         >
           Esqueceu sua senha?
           </Link>
 
         <Button
           marginTop={6}
-          backgroundColor="blue.400"
-          _hover={{ backgroundColor: 'blue.300' }}
+          backgroundColor="#133B5C"
+          _hover={{ backgroundColor: '#b0978f' }}
           borderRadius="sm"
           height="50px"
           onClick={() =>
@@ -103,9 +104,9 @@ export default function Home() {
         >
           Não tem uma conta? {" "}
           <Link
-            color="blue.400"
+            color="#2D4059"
             fontWeight="bold"
-            _hover={{ color: 'blue.300' }}
+            _hover={{ color: '#DECDC3' }}
           >
             Registre-se
  </Link>
@@ -120,8 +121,8 @@ export default function Home() {
           <Button
             height="50px"
             flex="1"
-            backgroundColor="gray.800"
-            _hover={{ backgroundColor: 'gray.600' }}
+            backgroundColor="#2D4059"
+            _hover={{ backgroundColor: '#b0978f' }}
             marginLeft={6}
             borderRadius="sm"
           >
